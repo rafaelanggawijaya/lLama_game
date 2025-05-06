@@ -13,13 +13,17 @@ pygame.display.set_caption("Llama Game")
 # Clock for controlling frame rate
 clock = pygame.time.Clock()
 font = pygame.font.Font(None, 36)
+# Colors
+WHITE = (255, 255, 255)
 
-# Game variables
-ground = 300 # ground height
-on_ground = True # telling program if lama is on the ground (default)
-gravity = 0.5 # Gravity 
-llama_velocity = 0 # variable which will be affected by gravity
 
-# Llama (player)
-llama_rect = pygame.Rect(100, ground, 50, 50)
-
+# Main game loop
+while True:
+    # sets the colour of the background
+    screen.fill(WHITE)
+    # quit game (helps testing)
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+    
